@@ -1,1 +1,1 @@
-# gatling-experiment
+# performance-testing-experiment
