@@ -18,4 +18,8 @@ class RetaskMeSimulation extends Simulation {
 
   setUp(scn.inject(atOnceUsers(10)))
     .protocols(conf)
+    .assertions(
+      forAll.successfulRequests.percent.is(100),
+      forAll.responseTime.percentile4.lt(300) // 300ms makes it fail for some endpoints, 1000ms is always OK
+    )
 }
