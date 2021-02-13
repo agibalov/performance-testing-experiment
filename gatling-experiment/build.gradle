@@ -1,20 +1,11 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "gradle.plugin.com.github.lkishalmi.gatling:gradle-gatling-plugin:3.3.0"
-    }
+plugins {
+    id 'java'
+    id 'scala'
+    id 'io.gatling.gradle' version '3.5.1'
 }
 
 group 'io.agibalov'
 version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'scala'
-apply plugin: "com.github.lkishalmi.gatling"
 
 sourceCompatibility = 1.8
 
@@ -24,7 +15,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'org.scala-lang:scala-library:2.12.10'
 }
 
 task finalizeGatlingRun(type: Copy) {
