@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'scala'
-    id 'io.gatling.gradle' version '3.4.2'
+    id 'io.gatling.gradle' version '3.5.1'
 }
 
 group 'io.agibalov'
@@ -29,6 +29,3 @@ task finalizeGatlingRun(type: Copy) {
 }
 
 gatlingRun.finalizedBy finalizeGatlingRun
-
-gatling {
-}
