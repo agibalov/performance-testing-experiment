@@ -85,6 +85,7 @@ class DummyDoSomething(protocol: DummyProtocol,
     val end = System.currentTimeMillis
 
     statsEngine.logResponse(session.scenario, session.groups, name, start, end, OK, None, None)
+
     next ! session
   }
 }
