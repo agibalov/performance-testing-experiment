@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'scala'
-    id 'com.github.lkishalmi.gatling' version '3.3.0'
+    id 'io.gatling.gradle' version '3.4.2'
 }
 
 group 'io.agibalov'
@@ -15,7 +15,6 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'org.scala-lang:scala-library:2.12.10'
 }
 
 task finalizeGatlingRun(type: Copy) {
@@ -30,3 +29,6 @@ task finalizeGatlingRun(type: Copy) {
 }
 
 gatlingRun.finalizedBy finalizeGatlingRun
+
+gatling {
+}

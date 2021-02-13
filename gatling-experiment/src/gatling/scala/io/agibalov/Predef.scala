@@ -83,7 +83,8 @@ class DummyDoSomething(protocol: DummyProtocol,
     val start = System.currentTimeMillis
     codeToTest.doSomething()
     val end = System.currentTimeMillis
-    statsEngine.logResponse(session, name, start, end, OK, None, None)
+
+    statsEngine.logResponse(session.scenario, session.groups, name, start, end, OK, None, None)
     next ! session
   }
 }
